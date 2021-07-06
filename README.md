@@ -2,7 +2,7 @@
 Research on Server, Name based virtual hosts
 
 
-Creating a Name based Virtual Host[using Apache Server]
+<h1>Creating a Name based Virtual Host[using Apache Server]</h1>
 
 Step 1: Prerequisites (If Apache is not installed then install it with the below commands)
 
