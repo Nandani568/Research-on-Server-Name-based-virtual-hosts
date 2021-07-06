@@ -148,4 +148,67 @@ write test1.com[get your index.html]
 write test2.com[get your index.html]
 
 
+<h1>Creating a Name based Virtual Host in Nginx</h1>
+
+Step 1: Install and start Nginx
+
+sudo apt-get update
+
+sudo apt-get install nginx
+
+systemctl start nginx
+
+
+Step 2: Create directories
+
+sudo mkdir -p /var/www/test1.com/html
+
+sudo mkdir -p /var/www/test2.com/html
+
+Step 3: Permissions
+
+sudo chown -R $USER:$USER /var/www/test1.com/html
+
+sudo chown -R $USER:$USER /var/www/test2.com/html
+
+Step 4: Create sample pages
+
+echo "test1" > /var/www/test1.com/html/index.html
+
+echo "test2" > /var/www/test2.com/html/index.html
+
+Step 5: Create configuration files
+
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/test1.com
+
+Then edit it so that it looks like:
+
+
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/test2.com
+
+And similar to the test1.com conf file edit test2.com conf file as follows:
+
+
+Step 6: Enable the configuration files and restart the server
+
+sudo ln -s /etc/nginx/sites-available/test1.com /etc/nginx/sites-enabled/
+
+sudo ln -s /etc/nginx/sites-available/test2.com /etc/nginx/sites-enabled/
+
+sudo systemctl restart nginx
+
+Step 7: Configure the local DNS
+
+Add the following line in /etc/hosts file to configure the local DNS
+
+127.0.0.1 www.test1.com www.test2.com
+
+Step 8: Test the websites
+
+If everything went right then you should see the following output
+
+curl www.test1.com
+
+curl www.test2.com
+
 
