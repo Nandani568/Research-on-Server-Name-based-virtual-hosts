@@ -83,12 +83,14 @@ using that and modifying that to create new configuration files for our websites
 sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/test1.conf
   
   ****It will look like this
+  
 <VirtualHost *:80>
 ServerAdmin webmaster@localhost
 DocumentRoot /var/www/html
 ErrorLog ${APACHE_LOG_DIR}/error.log
 CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
+
 ***For Test1.config
 
 ServerAdmin admin@test1.com
