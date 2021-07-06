@@ -137,6 +137,13 @@ sudo service apache2 restart
 
 Output:
 
+Go to Browser 
+
+hit your ip address[get your default page]
+
+write test1.com[get your index.html]
+
+write test2.com[get your index.html]
 
 
 
